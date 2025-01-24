@@ -1,99 +1,109 @@
 class TempData {
   static Map<String, dynamic> getDummyData() {
     return {
-      "buyers": [
+      "orderLists": [
         {
-          "name": "John Doe",
-          "orderLists": [
+          "kupac": {
+            "id": 2,
+            "imeprezime": "Marko Petrović",
+            "adresa": "Kralja Petra 15",
+            "grad": "Beograd",
+            "telefon": 381641234567,
+            "email": "marko@email.com",
+            "kanal": "website",
+            "pol": "Muski"
+          },
+          "datumKreiranja": "2024-01-15T10:30:00",
+          "datumIsporuke": "2024-01-20T14:00:00",
+          "neSlatiPre": "2024-01-18T09:00:00",
+          "nacinPlacanja": "kartica",
+          "besplatnaDos": false,
+          "orders": [
             {
-              "orders": [
+              "popust": 10.0,
+              "kolicina": 2,
+              "gravura": "Srećan rođendan!",
+              "products": [
                 {
-                  "popust": 10.0,
-                  "products": [
-                    {
-                      "name": "Stolica Modern",
-                      "materijal": "Hrast",
-                      "cena": 15000.0
-                    },
-                    {
-                      "name": "Sto Klasik",
-                      "materijal": "Orah",
-                      "cena": 25000.0
-                    }
-                  ]
+                  "name": "Zlatni prsten",
+                  "materijal": "14k zlato",
+                  "cena": 299.99,
+                  "imageUrl":
+                      "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQiX1vaoWWbfHRBS-iVYzwFNgUJ7WcjzO_GBXufRHoRW4bi9YLS-YZnZmBx1CXzQSGXkIJEZozD_P-YOUrijreo5Q"
                 },
                 {
-                  "popust": 15.0,
-                  "products": [
-                    {
-                      "name": "Komoda Lux",
-                      "materijal": "Bukva",
-                      "cena": 35000.0
-                    }
-                  ]
+                  "name": "Srebrna narukvica",
+                  "materijal": "925 srebro",
+                  "cena": 89.99,
+                  "imageUrl":
+                      "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQiX1vaoWWbfHRBS-iVYzwFNgUJ7WcjzO_GBXufRHoRW4bi9YLS-YZnZmBx1CXzQSGXkIJEZozD_P-YOUrijreo5Q"
                 }
               ]
             }
           ]
         },
         {
-          "name": "Jane Smith",
-          "orderLists": [
+          "kupac": {
+            "id": 7,
+            "imeprezime": "Ana Jovanović",
+            "adresa": "Kneza Miloša 25",
+            "grad": "Novi Sad",
+            "telefon": 381651234567,
+            "email": "ana@email.com",
+            "kanal": "instagram",
+            "pol": "Zenski"
+          },
+          "besplatnaDos": true,
+          "datumKreiranja": "2024-01-16T11:45:00",
+          "datumIsporuke": "2024-01-21T15:30:00",
+          "neSlatiPre": "2024-01-19T10:00:00",
+          "nacinPlacanja": "pouzecem",
+          "orders": [
             {
-              "orders": [
+              "popust": 15.0,
+              "kolicina": 14,
+              "gravura": "Za moju dragu",
+              "products": [
                 {
-                  "popust": 5.0,
-                  "products": [
-                    {
-                      "name": "Fotelja Comfort",
-                      "materijal": "Eco koža",
-                      "cena": 28000.0
-                    },
-                    {
-                      "name": "Tabure Mini",
-                      "materijal": "Štof",
-                      "cena": 8000.0
-                    },
-                    {
-                      "name": "Polica Wood",
-                      "materijal": "Hrast",
-                      "cena": 12000.0
-                    }
-                  ]
+                  "name": "Dijamantski privezak",
+                  "materijal": "18k zlato",
+                  "cena": 499.99,
+                  "imageUrl":
+                      "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQiX1vaoWWbfHRBS-iVYzwFNgUJ7WcjzO_GBXufRHoRW4bi9YLS-YZnZmBx1CXzQSGXkIJEZozD_P-YOUrijreo5Q"
                 }
               ]
             }
           ]
         },
         {
-          "name": "Mike Johnson",
-          "orderLists": [
+          "kupac": {
+            "id": 46,
+            "imeprezime": "Stefan Nikolić",
+            "adresa": "Cara Dušana 42",
+            "grad": "Niš",
+            "telefon": 381661234567,
+            "email": "stefan@email.com",
+            "kanal": "facebook",
+            "pol": "Muski"
+          },
+          "besplatnaDos": false,
+          "datumKreiranja": "2024-01-17T09:15:00",
+          "datumIsporuke": "2024-01-22T13:45:00",
+          "neSlatiPre": "2024-01-20T08:00:00",
+          "nacinPlacanja": "kartica",
+          "orders": [
             {
-              "orders": [
+              "besplatnaDos": true,
+              "popust": 20.0,
+              "kolicina": 7,
+              "gravura": "Zauvek tvoj",
+              "products": [
                 {
-                  "popust": 20.0,
-                  "products": [
-                    {
-                      "name": "Krevet King",
-                      "materijal": "Bukva",
-                      "cena": 45000.0
-                    },
-                    {
-                      "name": "Noćni stočić Basic",
-                      "materijal": "Medijapan",
-                      "cena": 9000.0
-                    }
-                  ]
-                },
-                {
-                  "popust": 0.0,
-                  "products": [
-                    {
-                      "name": "Ormar Sliding",
-                      "materijal": "Iverica",
-                      "cena": 55000.0
-                    }
-                  ]
+                  "name": "Vereničko prstenje",
+                  "materijal": "platina",
+                  "cena": 799.99,
+                  "imageUrl":
+                      "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQiX1vaoWWbfHRBS-iVYzwFNgUJ7WcjzO_GBXufRHoRW4bi9YLS-YZnZmBx1CXzQSGXkIJEZozD_P-YOUrijreo5Q"
                 }
               ]
             }

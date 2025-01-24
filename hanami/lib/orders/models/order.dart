@@ -1,26 +1,28 @@
 import './models.dart';
 
 class Order {
-  final double popust; // Discount on the order
-  final List<Product> listaproizvoda; // List of products associated with this order
+  final double popust;
+  int kolicina;
+  final String gravura;
+  final List<Product> listaproizvoda;
 
   Order({
+    required this.kolicina,
+    required this.gravura,
     required this.popust,
     List<Product>? listaproizvoda,
-  }) : listaproizvoda = listaproizvoda ?? []; // Initialize listaproizvoda with an empty list if null
+  }) : listaproizvoda = listaproizvoda ?? [];
 
-  // Factory constructor to parse JSON into an Order object
   factory Order.fromJson(Map<String, dynamic> json) {
-    // Parse the `products` key (array of products) into List<Product>
     final productsJson = json['products'] as List<dynamic>?;
 
     return Order(
-      popust: json['popust'] ?? 0.0, // Default popust to 0.0 if not provided
+      kolicina: json['kolicina'] ?? 1,
+      gravura: json['gravura'] ?? 'nema gravure',
+      popust: json['popust'] ?? 0.0,
       listaproizvoda: productsJson != null
           ? productsJson.map((item) => Product.fromJson(item)).toList()
-          : [], // Default to an empty list if products aren't present
+          : [],
     );
   }
-
-
 }
