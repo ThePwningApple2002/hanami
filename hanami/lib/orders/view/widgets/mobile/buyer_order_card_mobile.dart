@@ -13,6 +13,7 @@ class BuyerCardMobile extends StatelessWidget {
   @override
   @override
   Widget build(BuildContext context) {
+    bool isWeb = MediaQuery.of(context).size.width > 750;
     return Card(
       margin: const EdgeInsets.only(bottom: 16),
       shape: RoundedRectangleBorder(
@@ -23,49 +24,52 @@ class BuyerCardMobile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 14),
             color: const Color(0xFFFCE6CD),
             child: Column(
               children: [
-                // First Row
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "ID: ${buyer.id.toString().padLeft(4, '0')} ${buyer.imeprezime}",
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                Wrap(
+                  children:[ Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          "ID: ${buyer.id.toString().padLeft(4, '0')} ${buyer.imeprezime}",
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
-                    ),
-                    Row(
-                      children: const [
-                        ImageIcon(
-                          AssetImage("assets/papir.png"),
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                        ImageIcon(
-                          AssetImage("assets/papirolovka.png"),
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                        ImageIcon(
-                          AssetImage("assets/kanta.png"),
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                        ImageIcon(
-                          AssetImage("assets/vector.png"),
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                      ],
-                    ),
-                  ],
+                      Row(
+                        children: const [
+                          ImageIcon(
+                            AssetImage("assets/papir.png"),
+                            color: Colors.black,
+                            size: 30,
+                          ),
+                          ImageIcon(
+                            AssetImage("assets/papirolovka.png"),
+                            color: Colors.black,
+                            size: 30,
+                          ),
+                          ImageIcon(
+                            AssetImage("assets/kanta.png"),
+                            color: Colors.black,
+                            size: 30,
+                          ),
+                          ImageIcon(
+                            AssetImage("assets/vector.png"),
+                            color: Colors.black,
+                            size: 30,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),]
                 ),
                 const SizedBox(height: 12),
-                // Second Row
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -96,31 +100,24 @@ class BuyerCardMobile extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 12),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      // Action
-                    },
-                    style: ElevatedButton.styleFrom(
-                      elevation: 0,
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      side: const BorderSide(color: Colors.white),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    child: const Text(
-                      "Za izradu",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                Container(
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                    border:
+                        Border.all(color: Color.fromARGB(255, 145, 145, 145)),
                   ),
-                ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Za izradu",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
@@ -128,21 +125,24 @@ class BuyerCardMobile extends StatelessWidget {
             buyer: buyer,
             orderList: orderList,
           ),
-          ExpansionTile(
-            title: const Text(
-              "Proizvodi",
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+          if (!isWeb)
+            ExpansionTile(
+              title: const Text(
+                "Proizvodi",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            textColor: Colors.black,
-            iconColor: const Color(0xFFF5A25D),
-            children: [
-              Divider(),
-              OrderListCard(orderList: orderList),
-            ],
-          ),
+              textColor: Colors.black,
+              iconColor: const Color(0xFFF5A25D),
+              children: [
+                Divider(),
+                OrderListCard(orderList: orderList),
+              ],
+            )
+          else
+            OrderListCard(orderList: orderList),
         ],
       ),
     );

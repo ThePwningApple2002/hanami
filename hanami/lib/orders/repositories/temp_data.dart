@@ -5,7 +5,7 @@ class TempData {
         {
           "kupac": {
             "id": 2,
-            "imeprezime": "Marko Petrović",
+            "imeprezime": "Aleksandra Karađorđevićeva",
             "adresa": "Kralja Petra 15",
             "grad": "Beograd",
             "telefon": 381641234567,

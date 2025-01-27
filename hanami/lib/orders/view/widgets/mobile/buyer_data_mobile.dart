@@ -92,13 +92,31 @@ class BuyerDataMobile extends StatelessWidget {
                       color: Colors.black,
                       fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  "Email: ${buyer.email}",
-                  style: const TextStyle(
-                      fontSize: 16,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold),
-                ),
+                orderList.besplatnaDos
+                    ? Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 8.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  color: Colors.orange,
+                                  border: Border.all(
+                                      color: Colors.black, width: 1)),
+                              width: 20,
+                              height: 20,
+                            ),
+                          ),
+                          Text(
+                            "Besplatna dostava",
+                            style: const TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      )
+                    : SizedBox.shrink(),
                 Divider(),
                 Text(
                   "Pol: ${buyer.pol}",

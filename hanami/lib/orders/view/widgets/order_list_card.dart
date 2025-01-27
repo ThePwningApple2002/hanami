@@ -12,7 +12,7 @@ class OrderListCard extends StatelessWidget {
     return Column(
       children: List.generate(orderList.listaporudzbina.length, (index) {
         final order = orderList.listaporudzbina[index];
-        return OrderCard(order: order, orderIndex: index + 1);
+        return OrderCard(order: order);
       }),
     );
   }

@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:hanami/orders/models/models.dart';
+import 'package:hanami/orders/view/widgets/widgets.dart';
 
-class ProductCard extends StatelessWidget {
+class ProductCardMobile extends StatelessWidget {
   final Product product;
   final int kolicina;
   final String gravura;
   final double popust;
+  final int index;
 
-  const ProductCard({
+  const ProductCardMobile({
     super.key,
     required this.popust,
     required this.product,
     required this.kolicina,
     required this.gravura,
+    required this.index,
   });
 
   @override
@@ -20,8 +23,31 @@ class ProductCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Column(
+        
+        
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                '$index.',
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              Row(
+                  children: [
+                    ImageIcon(AssetImage("assets/papirolovka.png")),
+                    ImageIcon(AssetImage("assets/kanta.png"))
+                  ],
+                ),
+            ],
+          ),
+          CustomExpansionTile(),
+          const SizedBox(height: 4), 
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -31,7 +57,7 @@ class ProductCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
                   border: Border.all(
-                    color: Colors.orange, // Border color
+                    color: Colors.orange,
                     width: 2.0,
                   ),
                   image: DecorationImage(
