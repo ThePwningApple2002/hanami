@@ -15,17 +15,17 @@ class BuyerCardMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isWeb = MediaQuery.of(context).size.width > 750;
     return Card(
-      margin: const EdgeInsets.only(bottom: 16),
+      margin: EdgeInsets.only(bottom: 16),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        side: const BorderSide(color: Color(0xFFF5A25D)),
+        side: BorderSide(color: Color(0xFFF5A25D)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 14),
-            color: const Color(0xFFFCE6CD),
+            padding:  EdgeInsets.symmetric(vertical: 16, horizontal: 14),
+            color:  Color(0xFFFCE6CD),
             child: Column(
               children: [
                 Wrap(
@@ -36,14 +36,14 @@ class BuyerCardMobile extends StatelessWidget {
                         child: Text(
                           "ID: ${buyer.id.toString().padLeft(4, '0')} ${buyer.imeprezime}",
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
+                          style:  TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                       Row(
-                        children: const [
+                        children:  [
                           ImageIcon(
                             AssetImage("assets/papir.png"),
                             color: Colors.black,
@@ -69,11 +69,11 @@ class BuyerCardMobile extends StatelessWidget {
                     ],
                   ),]
                 ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
+                     Text(
                       "Rok: 3 dana",
                       style: TextStyle(
                         fontSize: 16,
@@ -82,7 +82,7 @@ class BuyerCardMobile extends StatelessWidget {
                       ),
                     ),
                     Row(
-                      children: const [
+                      children:  [
                         Text(
                           "Hitno",
                           style: TextStyle(
@@ -99,7 +99,7 @@ class BuyerCardMobile extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 12),
+                 SizedBox(height: 12),
                 Container(
                   height: 40,
                   decoration: BoxDecoration(
@@ -127,7 +127,7 @@ class BuyerCardMobile extends StatelessWidget {
           ),
           if (!isWeb)
             ExpansionTile(
-              title: const Text(
+              title:  Text(
                 "Proizvodi",
                 style: TextStyle(
                   fontSize: 16,
@@ -135,7 +135,7 @@ class BuyerCardMobile extends StatelessWidget {
                 ),
               ),
               textColor: Colors.black,
-              iconColor: const Color(0xFFF5A25D),
+              iconColor:  Color(0xFFF5A25D),
               children: [
                 Divider(),
                 OrderListCard(orderList: orderList),

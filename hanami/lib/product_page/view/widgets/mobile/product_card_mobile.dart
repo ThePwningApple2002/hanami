@@ -9,10 +9,10 @@ class ProductCardMobile extends StatefulWidget {
   const ProductCardMobile({super.key, required this.product});
 
   @override
-  State<ProductCardMobile> createState() => _ProductCardMobileState();
+  State<ProductCardMobile> createState() => ProductCardMobileState();
 }
 
-class _ProductCardMobileState extends State<ProductCardMobile> {
+class ProductCardMobileState extends State<ProductCardMobile> {
   int _currentIndex = 1;
 
   @override

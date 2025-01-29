@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hanami/product_page/view/pages/product_page.dart';
 import 'package:hanami/orders/repositories/temp_data.dart';
 import 'package:hanami/orders/models/models.dart';
+import 'package:hanami/shop/view/pages/shop_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: ProductDetailPage(product: getSampleProduct()),
+      home: ShopPage(product: getSampleProduct()),
     );
   }
 }
