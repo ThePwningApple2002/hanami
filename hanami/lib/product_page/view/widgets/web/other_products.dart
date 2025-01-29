@@ -33,7 +33,7 @@ class OtherProductsSection extends StatelessWidget {
           ],
         ),
         SizedBox(height: 20),
-        Container(
+        SizedBox(
           width: double.infinity,
           child: GridView.builder(
             shrinkWrap: true,

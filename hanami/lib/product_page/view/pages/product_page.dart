@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:hanami/orders/models/product.dart';
 import 'package:hanami/product_page/view/widgets/mobile/product_card_mobile.dart';

@@ -23,11 +23,8 @@ class ProductCardMobile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Column(
-        
-        
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -39,15 +36,15 @@ class ProductCardMobile extends StatelessWidget {
                 ),
               ),
               Row(
-                  children: [
-                    ImageIcon(AssetImage("assets/papirolovka.png")),
-                    ImageIcon(AssetImage("assets/kanta.png"))
-                  ],
-                ),
+                children: [
+                  ImageIcon(AssetImage("assets/papirolovka.png")),
+                  ImageIcon(AssetImage("assets/kanta.png"))
+                ],
+              ),
             ],
           ),
           CustomExpansionTile(),
-          const SizedBox(height: 4), 
+          const SizedBox(height: 4),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -62,9 +59,9 @@ class ProductCardMobile extends StatelessWidget {
                   ),
                   image: DecorationImage(
                     image: NetworkImage(
-                      product.imageUrl.isNotEmpty
-                          ? product.imageUrl
-                          : 'https://static.vecteezy.com/system/resources/thumbnails/036/324/708/small_2x/ai-generated-picture-of-a-tiger-walking-in-the-forest-photo.jpg',
+                      product.imageUrls.isNotEmpty
+                          ? product.imageUrls[0] // Use the first image from the list
+                          : 'https://placeholder.com/default-image.jpg',
                     ),
                     fit: BoxFit.cover,
                   ),
@@ -73,9 +70,9 @@ class ProductCardMobile extends StatelessWidget {
               const SizedBox(width: 16),
               Expanded(
                 child: Column(
-                  spacing: 8,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const SizedBox(height: 8),
                     Text(
                       product.ime,
                       style: const TextStyle(
@@ -83,6 +80,7 @@ class ProductCardMobile extends StatelessWidget {
                         fontSize: 16,
                       ),
                     ),
+                    const SizedBox(height: 8),
                     Text(
                       "Materijal: ${product.materijal}",
                       style: const TextStyle(
@@ -90,6 +88,7 @@ class ProductCardMobile extends StatelessWidget {
                         fontSize: 16,
                       ),
                     ),
+                    const SizedBox(height: 8),
                     Text(
                       "Količina: $kolicina",
                       style: const TextStyle(
@@ -97,13 +96,15 @@ class ProductCardMobile extends StatelessWidget {
                         fontSize: 16,
                       ),
                     ),
+                    const SizedBox(height: 8),
                     Text(
-                      "popust: $popust%",
+                      "Popust: $popust%",
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
                       ),
                     ),
+                    const SizedBox(height: 8),
                     Text(
                       "Cena: ${product.cena.toStringAsFixed(2)} RSD",
                       style: const TextStyle(
@@ -111,6 +112,7 @@ class ProductCardMobile extends StatelessWidget {
                         fontSize: 16,
                       ),
                     ),
+                    const SizedBox(height: 8),
                     Text(
                       "Ukupno: ${(product.cena * kolicina).toStringAsFixed(2)} RSD",
                       style: const TextStyle(
@@ -139,9 +141,9 @@ class ProductCardMobile extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                style: TextStyle(fontWeight: FontWeight.bold),
                 gravura.isNotEmpty ? gravura : "Nema gravure",
                 textAlign: TextAlign.center,
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
           ),

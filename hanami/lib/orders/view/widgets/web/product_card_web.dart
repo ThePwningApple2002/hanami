@@ -28,7 +28,6 @@ class ProductCardWeb extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 10,
         children: [
           Container(
             width: 30,
@@ -41,8 +40,8 @@ class ProductCardWeb extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(width: 10),
           Row(
-            spacing: 20,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
@@ -56,16 +55,16 @@ class ProductCardWeb extends StatelessWidget {
                   ),
                   image: DecorationImage(
                     image: NetworkImage(
-                      product.imageUrl.isNotEmpty
-                          ? product.imageUrl
-                          : 'https://static.vecteezy.com/system/resources/thumbnails/036/324/708/small_2x/ai-generated-picture-of-a-tiger-walking-in-the-forest-photo.jpg',
+                      product.imageUrls.isNotEmpty
+                          ? product.imageUrls[0]
+                          : 'https://placeholder.com/default-image.jpg',
                     ),
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
+              const SizedBox(width: 20),
               Column(
-                spacing: 10,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
@@ -75,6 +74,7 @@ class ProductCardWeb extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
+                  const SizedBox(height: 10),
                   Text(
                     "Materijal: ${product.materijal}",
                     style: const TextStyle(
@@ -82,6 +82,7 @@ class ProductCardWeb extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
+                  const SizedBox(height: 10),
                   Text(
                     "Količina: $kolicina",
                     style: const TextStyle(
@@ -89,13 +90,15 @@ class ProductCardWeb extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
+                  const SizedBox(height: 10),
                   Text(
-                    "popust: $popust%",
+                    "Popust: $popust%",
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),
                   ),
+                  const SizedBox(height: 10),
                   Text(
                     "Cena: ${product.cena.toStringAsFixed(2)} RSD",
                     style: const TextStyle(
@@ -103,6 +106,7 @@ class ProductCardWeb extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
+                  const SizedBox(height: 10),
                   Text(
                     "Ukupno: ${(product.cena * kolicina).toStringAsFixed(2)} RSD",
                     style: const TextStyle(
@@ -114,18 +118,18 @@ class ProductCardWeb extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(width: 20),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-
                 const Text(
                   "Gravura:",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Container(
-                  constraints: BoxConstraints(maxWidth: 300),
+                  constraints: const BoxConstraints(maxWidth: 300),
                   width: double.infinity,
                   height: 150,
                   margin: const EdgeInsets.only(top: 4),
@@ -136,9 +140,9 @@ class ProductCardWeb extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      style: TextStyle(fontWeight: FontWeight.bold),
                       gravura.isNotEmpty ? gravura : "Nema gravure",
                       textAlign: TextAlign.center,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -162,15 +166,18 @@ class ProductCardWeb extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: Center(
-                            child: Text(
-                          tipoviposiljke[0],
-                          style: TextStyle(fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                        )),
+                          child: Text(
+                            tipoviposiljke[0],
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                    ImageIcon(AssetImage("assets/papirolovka.png")),
-                    ImageIcon(AssetImage("assets/kanta.png"))
+                    const ImageIcon(AssetImage("assets/papirolovka.png")),
+                    const ImageIcon(AssetImage("assets/kanta.png")),
                   ],
                 )
               : DropdownButton<String>(

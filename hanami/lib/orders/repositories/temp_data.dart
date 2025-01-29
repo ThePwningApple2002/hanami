@@ -25,18 +25,22 @@ class TempData {
               "gravura": "Srećan rođendan!",
               "products": [
                 {
-                  "name": "Zlatni prsten",
+                  "ime": "Zlatni prsten",
                   "materijal": "14k zlato",
                   "cena": 299.99,
-                  "imageUrl":
-                      "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQiX1vaoWWbfHRBS-iVYzwFNgUJ7WcjzO_GBXufRHoRW4bi9YLS-YZnZmBx1CXzQSGXkIJEZozD_P-YOUrijreo5Q"
+                  "imageUrls": [
+                   "https://www.pbs.org/wnet/nature/files/2020/06/black-white-and-yellow-tiger-sitting-on-a-beige-sand-during-47312-scaled.jpg",
+                    "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQiX1vaoWWbfHRBS-iVYzwFNgUJ7WcjzO_GBXufRHoRW4bi9YLS-YZnZmBx1CXzQSGXkIJEZozD_P-YOUrijreo5Q",
+                    "https://images.ctfassets.net/rt5zmd3ipxai/2TtovnO1qnGJyPwtyuVOdU/8ddc745eca71320d2ea1d05679f81cb2/NVA-tiger.jpg?fit=fill&fm=webp&h=578&w=1070&q=72,%20https://images.ctfassets.net/rt5zmd3ipxai/2TtovnO1qnGJyPwtyuVOdU/8ddc745eca71320d2ea1d05679f81cb2/NVA-tiger.jpg?fit=fill&fm=webp&h=1156&w=2140&q=72"
+                  ]
                 },
                 {
-                  "name": "Srebrna narukvica",
+                  "ime": "Srebrna narukvica",
                   "materijal": "925 srebro",
                   "cena": 89.99,
-                  "imageUrl":
-                      "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQiX1vaoWWbfHRBS-iVYzwFNgUJ7WcjzO_GBXufRHoRW4bi9YLS-YZnZmBx1CXzQSGXkIJEZozD_P-YOUrijreo5Q"
+                  "imageUrls": [
+                    "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQiX1vaoWWbfHRBS-iVYzwFNgUJ7WcjzO_GBXufRHoRW4bi9YLS-YZnZmBx1CXzQSGXkIJEZozD_P-YOUrijreo5Q"
+                  ]
                 }
               ]
             }
@@ -65,11 +69,12 @@ class TempData {
               "gravura": "Za moju dragu",
               "products": [
                 {
-                  "name": "Dijamantski privezak",
+                  "ime": "Dijamantski privezak",
                   "materijal": "18k zlato",
                   "cena": 499.99,
-                  "imageUrl":
-                      "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQiX1vaoWWbfHRBS-iVYzwFNgUJ7WcjzO_GBXufRHoRW4bi9YLS-YZnZmBx1CXzQSGXkIJEZozD_P-YOUrijreo5Q"
+                  "imageUrls": [
+                    "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQiX1vaoWWbfHRBS-iVYzwFNgUJ7WcjzO_GBXufRHoRW4bi9YLS-YZnZmBx1CXzQSGXkIJEZozD_P-YOUrijreo5Q"
+                  ]
                 }
               ]
             }
@@ -99,11 +104,14 @@ class TempData {
               "gravura": "Zauvek tvoj",
               "products": [
                 {
-                  "name": "Vereničko prstenje",
+                  "ime": "Vereničko prstenje",
                   "materijal": "platina",
                   "cena": 799.99,
-                  "imageUrl":
+                  "imageUrls": [
+                    "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQiX1vaoWWbfHRBS-iVYzwFNgUJ7WcjzO_GBXufRHoRW4bi9YLS-YZnZmBx1CXzQSGXkIJEZozD_P-YOUrijreo5Q",
+                     "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQiX1vaoWWbfHRBS-iVYzwFNgUJ7WcjzO_GBXufRHoRW4bi9YLS-YZnZmBx1CXzQSGXkIJEZozD_P-YOUrijreo5Q",
                       "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQiX1vaoWWbfHRBS-iVYzwFNgUJ7WcjzO_GBXufRHoRW4bi9YLS-YZnZmBx1CXzQSGXkIJEZozD_P-YOUrijreo5Q"
+                  ]
                 }
               ]
             }

@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
-
-import '../../../orders/models/models.dart';
+import '../../../../orders/models/models.dart';
 
 class ProductInfoSection extends StatelessWidget {
   final Product product;
@@ -16,27 +14,29 @@ class ProductInfoSection extends StatelessWidget {
         spacing: 16,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           Text(
-            'Naziv proizvoda',
+          Text(
+            product.ime, // Using the product name from the model
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),
          
-           Text(
+          Text(
             'Proizvođač: M0012RS',
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold
            ),),
-          Text('Cena izrade: ${product.cena} RSD',
+          Text(
+            'Cena izrade: ${product.cena} RSD',
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold
            )),
        
-           Text('Materijali:',
+          Text(
+            'Materijali: ${product.materijal}', // Using the material from the model
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold
@@ -44,18 +44,18 @@ class ProductInfoSection extends StatelessWidget {
    
           Row(
             children: List.generate(
-              4,
+              product.imageUrls.length > 4 ? 4 : product.imageUrls.length, // Limit to 4 images
               (index) => Container(
                 width: 40,
                 height: 40,
-                margin:  EdgeInsets.only(right: 8),
+                margin: EdgeInsets.only(right: 8),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: Colors.grey.shade300),
                 ),
                 clipBehavior: Clip.hardEdge,
                 child: Image.network(
-                  product.imageUrl,
+                  product.imageUrls[index], // Using images from the imageUrls list
                   fit: BoxFit.cover,
                 ),
               ),
@@ -68,7 +68,7 @@ class ProductInfoSection extends StatelessWidget {
               backgroundColor: Colors.orange,
               minimumSize: const Size(double.infinity, 50),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10  ),
+                borderRadius: BorderRadius.circular(10),
               ),
             ),
             child: const Text(

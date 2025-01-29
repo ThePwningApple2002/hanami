@@ -1,17 +1,21 @@
-  class Product {
+class Product {
     final String ime;
     final String materijal;
     final double cena;
-    final String imageUrl;
+    final List<String> imageUrls; // Changed from String to List<String>
 
-    Product({required this.ime, required this.materijal, required this.cena, required this.imageUrl});
+    Product({
+      required this.ime, 
+      required this.materijal, 
+      required this.cena, 
+      required this.imageUrls
+    });
 
     factory Product.fromJson(Map<String, dynamic> json) {
       return Product(
-          ime: json['name'] ?? '',
+          ime: json['ime'] ?? '',
           materijal: json['materijal'] ?? '',
           cena: json['cena'] ?? 0,
-          imageUrl: json['imageUrl'] ?? '');
-          
+          imageUrls: List<String>.from(json['imageUrls'] ?? [])); 
     }
-  }
+}
